@@ -25,11 +25,8 @@ void main() {
     OpenMailApp.platform = FakePlatform(operatingSystem: Platform.android);
     final result = await OpenMailApp.openMailApp();
     expect(result.didOpen, true);
-    expect(
-      log,
-      <Matcher>[
-        isMethodCall('openMailApp', arguments: {'nativePickerTitle': ''}),
-      ],
-    );
+    expect(log, <Matcher>[
+      isMethodCall('openMailApp', arguments: {'nativePickerTitle': ''}),
+    ]);
   });
 }
